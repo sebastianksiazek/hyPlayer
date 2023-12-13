@@ -1,11 +1,9 @@
-module com.example.hypelay {
+module com.example.hyplayer {
     requires javafx.controls;
     requires javafx.fxml;
+    requires  java.sql;
+    requires  mysql.connector.j;
 
-    requires org.controlsfx.controls;
-    requires java.sql;
-    requires java.desktop;
-
-    opens com.example.hypelay to javafx.fxml;
-    exports com.example.hypelay;
+    opens com.example.hyplayer to javafx.fxml;
+    exports com.example.hyplayer;
 }

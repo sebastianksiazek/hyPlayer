@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hyplayer.RegistrationWindowController">
+    <center>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="mainLabel" text="Zarejestruj się, aby wejść w świat muzyki">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                    <padding>
+                        <Insets bottom="30.0" />
+                    </padding></Label>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                    <children>
+                        <Label fx:id="usernameLabel" text="Login">
+                            <padding>
+                                <Insets right="10.0" />
+                            </padding></Label>
+                        <TextField fx:id="usernameField" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                    <children>
+                        <Label fx:id="emailLabel" text="Email">
+                            <padding>
+                                <Insets right="10.0" />
+                            </padding></Label>
+                        <TextField fx:id="emailField" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                    <children>
+                        <Label fx:id="passwordLabel" text="Hasło">
+                            <padding>
+                                <Insets right="10.0" />
+                            </padding></Label>
+                        <PasswordField fx:id="passwordField" />
+                    </children>
+                </HBox>
+                <Button fx:id="registrationButton" mnemonicParsing="false" onAction="#handleRegistration" text="Zarejestruj się">
+                    <VBox.margin>
+                        <Insets top="20.0" />
+                    </VBox.margin></Button>
+            <Label fx:id="errorInfoLabel" />
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
