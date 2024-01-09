@@ -15,6 +15,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.example.hyplayer.RegistrationWindowController;
+
 public class HelloController {
 
     @FXML
@@ -31,10 +33,14 @@ public class HelloController {
     private Label emailMsg;
     @FXML
     protected void handleLogin() {
+        String username = usernameField.getText();
+        String password = passwordField.getText();
         try {
+            RegistrationWindowController hashPasswordSHA1 = new RegistrationWindowController();
+            String hashedPassword = RegistrationWindowController.hashPasswordSHA1(password);
             PreparedStatement ps = DatabaseConnection.getDatabaseConnection().prepareStatement("select email from users where username =? and password=?");
-            ps.setString(1, usernameField.getText());
-            ps.setString(2, passwordField.getText());
+            ps.setString(1, username);
+            ps.setString(2, hashedPassword);
             ResultSet rs = ps.executeQuery();
             if(rs.getFetchSize() == 0){
                 errorMsg.setText("Błąd logowania(złe hasło lub login)");
