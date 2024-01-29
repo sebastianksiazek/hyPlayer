@@ -1,0 +1,58 @@
+* {
+    -fx-focus-color: transparent !important;
+}
+
+.primary-color{
+    -fx-background-color: #525252;
+}
+
+.secondary-color{
+    -fx-background-color: #414141;
+}
+.third-color{
+    -fx-background-color: #313131;
+}
+fourth-color{
+    -fx-background-color: #CA3E47;
+}
+
+.round-border{
+    -fx-background-radius: 100;
+}
+.label{
+    -fx-text-fill: #ffffff;
+}
+.text-field{
+    -fx-background-color: #414141;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 100;
+}
+.button{
+    -fx-focus-traversable: false;
+    -fx-background-radius: 100;
+    -fx-background-color: #313131;
+    -fx-text-fill: #ffffff;
+}
+
+.scroll-bar {
+    -fx-background-color: #313131; /* Kolor tła suwaka */
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent; /* Kolor przycisków */
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #CA3E47; /* Kolor kciuka suwaka */
+    -fx-background-radius: 0.75em; /* Zaokrąglenie kciuka suwaka */
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #525252; /* Kolor kciuka suwaka po najechaniu myszką */
+}
+
+.scroll-bar .thumb:pressed {
+    -fx-background-color: #414141; /* Kolor kciuka suwaka po naciśnięciu */
+}
+

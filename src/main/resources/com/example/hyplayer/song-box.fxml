@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#boxOnClick" prefHeight="200.0" prefWidth="160.0" style="-fx-border-width: 2px; -fx-border-color: #525252;" styleClass="third-color" stylesheets="@../../../styles/darkMode.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hyplayer.SongModelController">
+   <children>
+      <ImageView fx:id="songBoxImage" fitHeight="158.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" translateX="3.0">
+         <image>
+            <Image url="@../../../songsImages/test1.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="songBoxName" prefHeight="17.0" prefWidth="166.0" text="Tytuł" />
+      <Label fx:id="songBoxAuthor" text="Autor:   " />
+   </children>
+</VBox>

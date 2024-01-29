@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="primary-color" stylesheets="@../../../styles/darkMode.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hyplayer.UsersListController">
+   <children>
+      <Label fx:id="usersList" layoutX="60.0" layoutY="65.0" prefHeight="252.0" prefWidth="485.0" />
+      <Label layoutX="222.0" layoutY="14.0" text="Użytkownicy">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

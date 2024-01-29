@@ -6,4 +6,6 @@ module com.example.hyplayer {
 
     opens com.example.hyplayer to javafx.fxml;
     exports com.example.hyplayer;
+    exports model;
+    opens model to javafx.fxml;
 }

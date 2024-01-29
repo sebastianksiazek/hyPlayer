@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -38,7 +39,7 @@ public class HelloController {
         try {
             RegistrationWindowController hashPasswordSHA1 = new RegistrationWindowController();
             String hashedPassword = RegistrationWindowController.hashPasswordSHA1(password);
-            PreparedStatement ps = DatabaseConnection.getDatabaseConnection().prepareStatement("select email from users where username =? and password=?");
+            PreparedStatement ps = DatabaseConnection.getDatabaseConnection().prepareStatement("select * from users where username =? and password=?");
             ps.setString(1, username);
             ps.setString(2, hashedPassword);
             ResultSet rs = ps.executeQuery();
@@ -46,6 +47,9 @@ public class HelloController {
                 errorMsg.setText("Błąd logowania(złe hasło lub login)");
             }
             while(rs.next()){
+                CurrentUserData currentUserData = CurrentUserData.getInstance();
+                currentUserData.setUserId(rs.getInt("user_id"));
+                System.out.println("User id: " + currentUserData.getUserId());
                 homePanel();
             }
         } catch (SQLException | IOException e) {
@@ -59,6 +63,7 @@ public class HelloController {
         Stage newStage = new Stage();
         newStage.setTitle("hyPlayer");
         newStage.setScene(scene);
+        newStage.setResizable(false);
         newStage.show();
         Stage curentStage = (Stage) loginButton.getScene().getWindow(); //Current Stage
         curentStage.close(); // Closing this window
@@ -66,12 +71,14 @@ public class HelloController {
     @FXML
    private void registrationButtonAction() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("registration-window.fxml"));
+        Stage currentStage = (Stage) loginButton.getScene().getWindow(); //Current Stage
         Scene scene = new Scene(root);
         Stage newStage = new Stage();
         newStage.setTitle("hyPlayer");
         newStage.setScene(scene);
-        newStage.show();
-        Stage curentStage = (Stage) loginButton.getScene().getWindow(); //Current Stage
-        curentStage.close(); // Closing this window
+        newStage.setResizable(false);
+        newStage.initModality(Modality.APPLICATION_MODAL);
+        newStage.showAndWait();
+        currentStage.toFront();
     }
 }

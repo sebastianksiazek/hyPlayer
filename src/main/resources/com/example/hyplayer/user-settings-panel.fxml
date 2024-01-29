@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="primary-color" stylesheets="@../../../styles/darkMode.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hyplayer.UserSettingsPanelController">
+   <children>
+      <Label layoutX="68.0" layoutY="79.0" text="Imie" />
+      <Label layoutX="55.0" layoutY="116.0" text="Nazwisko" />
+      <Label layoutX="64.0" layoutY="154.0" text="Adres" />
+      <Label layoutX="62.0" layoutY="192.0" text="Miasto" />
+      <Label layoutX="28.0" layoutY="44.0" text="Nazwa Użytkownika" />
+      <TextField fx:id="nameField" layoutX="134.0" layoutY="75.0" />
+      <TextField fx:id="surnameField" layoutX="134.0" layoutY="112.0" />
+      <TextField fx:id="addressField" layoutX="134.0" layoutY="150.0" />
+      <TextField fx:id="cityField" layoutX="134.0" layoutY="188.0" />
+      <TextField fx:id="zipCodeField" layoutX="134.0" layoutY="224.0" />
+      <Label layoutX="43.0" layoutY="228.0" text="Kod-Pocztowy" />
+      <Label fx:id="userNameLabel" layoutX="195.0" layoutY="44.0" />
+      <Button fx:id="submittButton" layoutX="177.0" layoutY="273.0" mnemonicParsing="false" onAction="#submittButtonAction" text="Zatwiedz" />
+   </children>
+</AnchorPane>

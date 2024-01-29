@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="primary-color" stylesheets="@../../../styles/darkMode.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hyplayer.AdminPanelController">
+   <children>
+      <Label layoutX="161.0" layoutY="32.0" text="Admin Panel">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Button layoutX="391.0" layoutY="361.0" mnemonicParsing="false" onAction="#selfDemotionAction" text="Zrezygnuj z funkcji administratora" />
+      <Button fx:id="grantAdmin" layoutX="35.0" layoutY="176.0" mnemonicParsing="false" onAction="#grantAdminAction" text="Nadaj administratora" />
+      <Button layoutX="45.0" layoutY="256.0" mnemonicParsing="false" onAction="#editSongAction" text="Edytuj Utwór" />
+      <TextField fx:id="userNameField" layoutX="87.0" layoutY="142.0" />
+      <Label layoutX="121.0" layoutY="122.0" text="Id Użytkownika" />
+      <Button layoutX="41.0" layoutY="224.0" mnemonicParsing="false" onAction="#createAction" text="Dodaj Nowy Utwór" />
+      <Button layoutX="428.0" layoutY="176.0" mnemonicParsing="false" onAction="#showSongsAction" text="Pokaż liste piosenek" />
+      <Button fx:id="eraseAdmin" layoutX="161.0" layoutY="176.0" mnemonicParsing="false" onAction="#eraseAdminAction" text="Odbierz administratora" />
+      <Label fx:id="errorMsg" layoutX="35.0" layoutY="105.0" prefHeight="17.0" prefWidth="545.0" />
+      <Button layoutX="413.0" layoutY="142.0" mnemonicParsing="false" onAction="#showUsersAction" text="Pokaż listę użytkowników" />
+      <Button layoutX="163.0" layoutY="224.0" mnemonicParsing="false" onAction="#AlbumsAction" text="Albumy" />
+      <Button layoutX="231.0" layoutY="224.0" mnemonicParsing="false" onAction="#CompositorsAction" text="Wykonawcy" />
+      <Button layoutX="48.0" layoutY="302.0" mnemonicParsing="false" onAction="#deleteAction" text="Usuń Utwór" />
+      <TextField fx:id="songId" layoutX="137.0" layoutY="302.0" />
+      <Label layoutX="183.0" layoutY="281.0" text="Id piosenki" />
+   </children>
+</AnchorPane>

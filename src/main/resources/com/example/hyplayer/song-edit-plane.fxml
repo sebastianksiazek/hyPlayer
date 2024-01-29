@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="primary-color" stylesheets="@../../../styles/darkMode.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hyplayer.SongEditPlaneController">
+   <children>
+      <Label layoutX="196.0" layoutY="25.0" text="Edytuj Piosenkę">
+         <font>
+            <Font size="30.0" />
+         </font></Label>
+      <TextField fx:id="nameField" layoutX="47.0" layoutY="138.0" />
+      <TextField fx:id="priceField" layoutX="47.0" layoutY="188.0" />
+      <TextField fx:id="genreField" layoutX="48.0" layoutY="238.0" />
+      <Button layoutX="91.0" layoutY="276.0" mnemonicParsing="false" text="Plik mp3" />
+      <Button layoutX="328.0" layoutY="251.0" mnemonicParsing="false" onAction="#imageAction" text="Obrazek" />
+      <Label layoutX="104.0" layoutY="107.0" text="Nazwa" />
+      <Button layoutX="389.0" layoutY="66.0" mnemonicParsing="false" onAction="#loadAction" text="Załaduj" />
+      <Label layoutX="140.0" layoutY="70.0" text="Id piosenki" />
+      <TextField fx:id="idField" layoutX="220.0" layoutY="66.0" />
+      <Label layoutX="108.0" layoutY="163.0" text="Cena" />
+      <Label layoutX="99.0" layoutY="217.0" text="Gatunek" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageUrl" fitHeight="150.0" fitWidth="135.0" layoutX="417.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="283.0" layoutY="116.0" text="Album" />
+      <Label layoutX="285.0" layoutY="172.0" text="Autor" />
+      <Button layoutX="259.0" layoutY="353.0" mnemonicParsing="false" onAction="#submitAction" text="Prześlij" />
+      <Label fx:id="errorMsg" layoutX="431.0" layoutY="357.0" />
+      <TextField fx:id="albumField" layoutX="226.0" layoutY="138.0" />
+      <TextField fx:id="authorField" layoutX="226.0" layoutY="188.0" />
+   </children>
+</AnchorPane>

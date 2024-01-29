@@ -115,18 +115,22 @@ public class RegistrationWindowController {
         String email = emailField.getText();
         String password = passwordField.getText();
         int userType;
+        int orginalAdmin;
 
         if(!username.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
             if(isDatabaseEmpty()) {
                 userType = 1;
+                orginalAdmin =1;
                 try (Connection connection = DatabaseConnection.getDatabaseConnection()) {
                     String hashedPassword = hashPasswordSHA1(password);
-                    String query = "INSERT INTO users (username, email, password, user_type) VALUES (?, ?, ?, ?)";
+                    String query = "INSERT INTO users (username, email, password, user_type,orginal_admin,balance) VALUES (?, ?, ?, ?, ?,?)";
                     try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                         preparedStatement.setString(1, username);
                         preparedStatement.setString(2, email);
                         preparedStatement.setString(3, hashedPassword);
                         preparedStatement.setInt(4, userType);
+                        preparedStatement.setInt(5, orginalAdmin);
+                        preparedStatement.setFloat(6, 1000);
 
                         int rowsAffected = preparedStatement.executeUpdate();
                         if (rowsAffected > 0) {
@@ -144,14 +148,17 @@ public class RegistrationWindowController {
             else {
                 if (!isUsernameExists(username) && !isEmailExists(email)) {
                     userType = 0;
+                    orginalAdmin =0;
                     try (Connection connection = DatabaseConnection.getDatabaseConnection()) {
                         String hashedPassword = hashPasswordSHA1(password);
-                        String query = "INSERT INTO users (username, email, password, user_type) VALUES (?, ?, ?, ?)";
+                        String query = "INSERT INTO users (username, email, password, user_type,orginal_admin,balance) VALUES (?, ?, ?, ?,?,?)";
                         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                             preparedStatement.setString(1, username);
                             preparedStatement.setString(2, email);
                             preparedStatement.setString(3, hashedPassword);
                             preparedStatement.setInt(4, userType);
+                            preparedStatement.setInt(5, orginalAdmin);
+                            preparedStatement.setFloat(6, 1000);
 
                             int rowsAffected = preparedStatement.executeUpdate();
                             if (rowsAffected > 0) {
@@ -182,12 +189,7 @@ public class RegistrationWindowController {
     }
 
     private void homePanel() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("hello-loging-panel.fxml"));
-        Scene scene = new Scene(root);
-        Stage newStage = new Stage();
-        newStage.setTitle("hyPlayer");
-        newStage.setScene(scene);
-        newStage.show();
+
         Stage curentStage = (Stage) registrationButton.getScene().getWindow();
         curentStage.close();
     }
